@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Form Container -->
+    <div class="form-container">
+      <h1>Fitness Tracker</h1>
+      <form id="fitness-form">
+        <input type="text" id="username" placeholder="Enter your name" required>
+        <input type="number" id="age" placeholder="Enter your age" required>
+        <input type="number" id="height" placeholder="Enter your height (cm)" required>
+        <input type="number" id="weight" placeholder="Enter your weight (kg)" required>
+        <button type="button" id="calculate-bmi">Calculate BMI</button> <!-- Changed to type="button" -->
+      </form>
+      <button onclick="goHome()">Go Back</button>
+    </div>
+
+    <!-- Result Container -->
+    <div class="result-container" id="result-container" style="display:none;">
+      <h2>Your Fitness Result</h2>
+      <p id="bmi-result"></p>
+      <p id="suggestion"></p>
+      <button onclick="goToNext()">Next</button>
+    </div>
+
+    <!-- Plan Container -->
+    <div class="plan-container" id="plan-container" style="display:none;">
+      <h2>Choose a Duration for Your Plan</h2>
+      <button onclick="showPlan('week')">1 Week</button>
+      <button onclick="showPlan('month')">1 Month</button>
+      <button onclick="showPlan('year')">1 Year</button>
+
+      <button onclick="goHome()">Go Back</button>
+    </div>
+
+    <!-- Exercise & Diet Plan Container -->
+    <div class="plan-details-container" id="plan-details-container" style="display:none;">
+      <h2>Exercise and Diet Plan</h2>
+      <div id="duration-plan"></div>
+      <div class="buttons">
+        <button onclick="goBackToPlan()">Go Back</button>
+        <button onclick="goHome()">Go Home</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    function goHome() {
+      window.location.href = 'intro.html'; // Navigate to the intro page
+    }
+  </script>
+</body>
+</html>
